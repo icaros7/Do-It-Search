@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.106
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "iCAROS7.DoItSearch.Desktop", "iCAROS7.DoItSearch.Desktop\iCAROS7.DoItSearch.Desktop.vbproj", "{67FB8B5A-0C33-498F-84C2-8FFE053CF044}"
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "iCAROS7.DoItSearch.Desktop.VB.net", "iCAROS7.DoItSearch.Desktop\iCAROS7.DoItSearch.Desktop.VB.net.vbproj", "{67FB8B5A-0C33-498F-84C2-8FFE053CF044}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iCAROS7.DoItSearch.Decktop.CSharp", "iCAROS7.DoItSearch.Decktop.CSharp\iCAROS7.DoItSearch.Decktop.CSharp.csproj", "{9A1C4A83-6E8D-4662-950A-E7780CD23FC2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{67FB8B5A-0C33-498F-84C2-8FFE053CF044}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{67FB8B5A-0C33-498F-84C2-8FFE053CF044}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{67FB8B5A-0C33-498F-84C2-8FFE053CF044}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A1C4A83-6E8D-4662-950A-E7780CD23FC2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A1C4A83-6E8D-4662-950A-E7780CD23FC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A1C4A83-6E8D-4662-950A-E7780CD23FC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A1C4A83-6E8D-4662-950A-E7780CD23FC2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
