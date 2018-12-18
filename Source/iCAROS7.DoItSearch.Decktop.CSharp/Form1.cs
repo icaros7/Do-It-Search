@@ -17,8 +17,9 @@ namespace iCAROS7.DoItSearch.Decktop.CSharp
     {
         Random rand = new Random();
         public int Cnt = 0;
-        public int Max_Cnt = 1;
+        public int Max_Cnt = 10;
         public string[] keywords;
+        private DateTime startTime, startTime2;
         public Form1()
         {
             InitializeComponent();
@@ -45,7 +46,7 @@ namespace iCAROS7.DoItSearch.Decktop.CSharp
         }
         private void OnTick(object sender, EventArgs eventArgs)
         {
-            timer1.Interval = rand.Next(1000, Max_Cnt * 1000);
+            timer1.Interval = rand.Next(5000, Max_Cnt * 1000);
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -64,32 +65,42 @@ namespace iCAROS7.DoItSearch.Decktop.CSharp
 
         private void startToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            keywords = Keyword.Text.Split(',');
-            timer1.Enabled = true;
+            if (Keyword.Text != "")
+            {
+                keywords = Keyword.Text.Split(',');
+                startTime = DateTime.Now;
+                label1.Text = @"검색 시간 : 00:00:00";
+                timer1.Enabled = true;
+                timer2.Enabled = true;
+            }
+            else
+            {
+                MessageBox.Show(@"검색 키워드를 입력해 주세요.", @"오류", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void stopToolStripMenuItem_Click(object sender, EventArgs e)
         {
             timer1.Enabled = false;
+            timer2.Enabled = false;
             Cnt = 0;
             MessageBox.Show(@"중지 되었습니다!", @"안내", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        private void max_intervaltoolStripTextBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void maxIntervalToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string maxIntv = Microsoft.VisualBasic.Interaction.InputBox("검색을 할 사이에 잠깐 기다릴 최대 시간 초를 설정 합니다." + "\n" + "30을 입력하는 경우 1~30초 사이를 무작위로 기다립니다.", "검색 최대 간격 설정");
+            string maxIntv = Microsoft.VisualBasic.Interaction.InputBox("검색을 할 사이에 잠깐 기다릴 최대 시간 초를 설정 합니다." + "\n" + "30을 입력하는 경우 5~30초 사이를 무작위로 기다립니다.", "검색 최대 간격 설정");
             try
             {
                 Max_Cnt = Int32.Parse(maxIntv);
+                if (Max_Cnt < 5)
+                {
+                    throw new FormatException();
+                }
             }
             catch (FormatException)
             {
-                MessageBox.Show(@"숫자로 적어주세요!", @"오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(@"5 이상의 숫자로 적어주세요!", @"오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -124,12 +135,18 @@ namespace iCAROS7.DoItSearch.Decktop.CSharp
             }
         }
 
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            TimeSpan span = new TimeSpan(DateTime.Now.Ticks - startTime.Ticks);
+            label1.Text = @"검색 시간 : " + span.ToString(@"hh\:mm\:ss");
+        }
+
         private void 사용법ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MessageBox.Show(@"가장 앞쪽 하얀 박스에 검색할 텍스트를 입력합니다." + "\n" + 
                 @"','(반점, 콤마) 기호를 이력하여 검색어를 구분합니다." + "\n" +
                 @"예시 : 트위터,#트위터" + "\n" +"\n" +
-                @"검색 최대 간격 버튼을 눌러 검색 최대간격을 설정합니다. 기본적으로 1초입니다." + "\n" + 
+                @"검색 최대 간격 버튼을 눌러 검색 최대간격을 설정합니다. 기본적으로 10초입니다." + "\n" + 
                 @"시작을 눌러 검색을 시작합니다." + "\n" + "\n" + 
                 @"제작 : hominlab@minnote.net", @"도움말", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
