@@ -35,16 +35,16 @@
             this.startToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.stopToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.maxIntervalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.사용법ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.howToUseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Setup_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loadAtStartToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label1 = new System.Windows.Forms.ToolStripTextBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timer2 = new System.Windows.Forms.Timer(this.components);
-            this.label1 = new System.Windows.Forms.ToolStripTextBox();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,7 +52,7 @@
             // 
             this.webBrowser1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.webBrowser1.Location = new System.Drawing.Point(0, 25);
-            this.webBrowser1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.webBrowser1.Margin = new System.Windows.Forms.Padding(2);
             this.webBrowser1.MinimumSize = new System.Drawing.Size(14, 13);
             this.webBrowser1.Name = "webBrowser1";
             this.webBrowser1.Size = new System.Drawing.Size(770, 451);
@@ -67,7 +67,7 @@
             this.startToolStripMenuItem,
             this.stopToolStripMenuItem,
             this.maxIntervalToolStripMenuItem,
-            this.사용법ToolStripMenuItem,
+            this.howToUseToolStripMenuItem,
             this.Setup_ToolStripMenuItem,
             this.label1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
@@ -107,12 +107,12 @@
             this.maxIntervalToolStripMenuItem.Text = "검색 최대 간격";
             this.maxIntervalToolStripMenuItem.Click += new System.EventHandler(this.maxIntervalToolStripMenuItem_Click);
             // 
-            // 사용법ToolStripMenuItem
+            // howToUseToolStripMenuItem
             // 
-            this.사용법ToolStripMenuItem.Name = "사용법ToolStripMenuItem";
-            this.사용법ToolStripMenuItem.Size = new System.Drawing.Size(55, 23);
-            this.사용법ToolStripMenuItem.Text = "사용법";
-            this.사용법ToolStripMenuItem.Click += new System.EventHandler(this.사용법ToolStripMenuItem_Click);
+            this.howToUseToolStripMenuItem.Name = "howToUseToolStripMenuItem";
+            this.howToUseToolStripMenuItem.Size = new System.Drawing.Size(55, 23);
+            this.howToUseToolStripMenuItem.Text = "사용법";
+            this.howToUseToolStripMenuItem.Click += new System.EventHandler(this.사용법ToolStripMenuItem_Click);
             // 
             // Setup_ToolStripMenuItem
             // 
@@ -162,16 +162,6 @@
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
             this.exitToolStripMenuItem.Text = "종료";
             // 
-            // timer1
-            // 
-            this.timer1.Interval = 1000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // timer2
-            // 
-            this.timer2.Interval = 1000;
-            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
-            // 
             // label1
             // 
             this.label1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -182,6 +172,16 @@
             this.label1.Size = new System.Drawing.Size(150, 23);
             this.label1.Text = "검색 시간 : 00:00:00";
             // 
+            // timer1
+            // 
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // timer2
+            // 
+            this.timer2.Interval = 1000;
+            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -190,7 +190,7 @@
             this.Controls.Add(this.webBrowser1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.Text = "Do It Search";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -215,7 +215,7 @@
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.ToolStripMenuItem 사용법ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem howToUseToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem maxIntervalToolStripMenuItem;
         private System.Windows.Forms.Timer timer2;
         private System.Windows.Forms.ToolStripTextBox label1;

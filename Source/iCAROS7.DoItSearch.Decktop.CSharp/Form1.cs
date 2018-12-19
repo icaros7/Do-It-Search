@@ -160,7 +160,7 @@ namespace iCAROS7.DoItSearch.Decktop.CSharp
                 Settings.Instance.LoadAtStart = false;
                 saveToolStripMenuItem.PerformClick();
             }
-            Log.InfoFormat(@"시작시 설정 불러오기 상태 전환환");
+            Log.InfoFormat(@"시작시 설정 불러오기 상태 전환");
         }
 
         private void timer2_Tick(object sender, EventArgs e)
@@ -177,6 +177,18 @@ namespace iCAROS7.DoItSearch.Decktop.CSharp
                 @"검색 최대 간격 버튼을 눌러 검색 최대간격을 설정합니다. 기본적으로 10초입니다." + "\n" + 
                 @"시작을 눌러 검색을 시작합니다." + "\n" + "\n" + 
                 @"제작 : hominlab@minnote.net", @"도움말", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+        private void Keyword_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                startToolStripMenuItem.PerformClick();
+                e.Handled = true;
+            }
+            else
+            {
+                return;
+            }
         }
     }
 }
