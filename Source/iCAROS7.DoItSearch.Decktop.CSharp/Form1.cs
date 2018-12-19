@@ -21,7 +21,7 @@ namespace iCAROS7.DoItSearch.Decktop.CSharp
         static readonly log4net.ILog Log = log4net.LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
         Random rand = new Random();
         public int Cnt = 0;
-        public int Max_Cnt = 10;
+        public int Max_Cnt = 5;
         public string[] keywords;
         private DateTime startTime;
         public Form1()
@@ -51,7 +51,7 @@ namespace iCAROS7.DoItSearch.Decktop.CSharp
         }
         private void OnTick(object sender, EventArgs eventArgs)
         {
-            timer1.Interval = rand.Next(5000, Max_Cnt * 1000);
+            timer1.Interval = rand.Next(3000, Max_Cnt * 1000);
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -111,13 +111,13 @@ namespace iCAROS7.DoItSearch.Decktop.CSharp
 
         private void maxIntervalToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string maxIntv = Microsoft.VisualBasic.Interaction.InputBox("검색을 할 사이에 잠깐 기다릴 최대 시간 초를 설정 합니다." + "\n" + "30을 입력하는 경우 5~30초 사이를 무작위로 기다립니다.", "검색 최대 간격 설정");
+            string maxIntv = Microsoft.VisualBasic.Interaction.InputBox("검색을 할 사이에 잠깐 기다릴 최대 시간 초를 설정 합니다." + "\n" + "30을 입력하는 경우 3~30초 사이를 무작위로 기다립니다.", "검색 최대 간격 설정");
 
             Log.InfoFormat(@"최대 검색 시간 변경 : {0}", maxIntv);
             try
             {
                 Max_Cnt = Int32.Parse(maxIntv);
-                if (Max_Cnt < 5)
+                if (Max_Cnt < 3)
                 {
                     Log.ErrorFormat(@"최대 검색 시간 설정 오류 {0}초", maxIntv);
                     throw new FormatException();
@@ -125,7 +125,7 @@ namespace iCAROS7.DoItSearch.Decktop.CSharp
             }
             catch (FormatException)
             {
-                MessageBox.Show(@"5 이상의 숫자로 적어주세요!", @"오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(@"3 이상의 숫자로 적어주세요!", @"오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
