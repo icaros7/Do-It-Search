@@ -63,6 +63,7 @@ namespace iCAROS7.DoItSearch.Decktop.CSharp
                 {
                     // Goto 1st keyword
                     Cnt = 0;
+                    GC.Collect();
                 }
                 else
                 {
@@ -103,7 +104,6 @@ namespace iCAROS7.DoItSearch.Decktop.CSharp
             Cnt = 0;
             Log.InfoFormat(@"검색 중지");
             GC.Collect();
-            Log.InfoFormat(@"GC수집됨");
             MessageBox.Show(@"중지 되었습니다!", @"안내", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
@@ -114,11 +114,14 @@ namespace iCAROS7.DoItSearch.Decktop.CSharp
             Log.InfoFormat(@"최대 검색 시간 변경 : {0}", maxIntv);
             try
             {
-                Max_Cnt = Int32.Parse(maxIntv);
-                if (Max_Cnt < 3)
+                if (Int32.Parse(maxIntv) < 3)
                 {
                     Log.ErrorFormat(@"최대 검색 시간 설정 오류 {0}초", maxIntv);
                     throw new FormatException();
+                }
+                else
+                {
+                    Max_Cnt = Int32.Parse(maxIntv);
                 }
             }
             catch (FormatException)
