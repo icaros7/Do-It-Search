@@ -19,7 +19,6 @@ namespace iCAROS7.DoItSearch.Decktop.CSharp
     public partial class Form1 : Form
     {
         static readonly log4net.ILog Log = log4net.LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
-        Random rand = new Random();
         public int Cnt = 0;
         public int Max_Cnt = 5;
         public string[] keywords;
@@ -27,12 +26,15 @@ namespace iCAROS7.DoItSearch.Decktop.CSharp
         public Form1()
         {
             InitializeComponent();
+
+            // Load Settings
             if (Settings.Instance.LoadAtStart == true)
             {
                 Keyword.Text = Settings.Instance.Keyword;
                 Max_Cnt = Settings.Instance.Max_Cnt;
                 loadAtStartToolStripMenuItem.Checked = Settings.Instance.LoadAtStart;
             }
+            // init form Size set to PrimaryScreen 1/4
             this.Width = Screen.PrimaryScreen.Bounds.Width / 2;
             this.Height = Screen.PrimaryScreen.Bounds.Height / 2;
         }
@@ -45,13 +47,11 @@ namespace iCAROS7.DoItSearch.Decktop.CSharp
         private void Form1_Load(object sender, EventArgs e)
         {
             Log.InfoFormat(@"프로그램 실행");
+            
+            // Move form to Center Screen
             int x = Screen.PrimaryScreen.Bounds.Width / 2 - this.Width / 2;
             int y = Screen.PrimaryScreen.Bounds.Height / 2 - this.Height / 2;
             this.Location = new Point(x, y);
-        }
-        private void OnTick(object sender, EventArgs eventArgs)
-        {
-            timer1.Interval = rand.Next(3000, Max_Cnt * 1000);
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -61,26 +61,22 @@ namespace iCAROS7.DoItSearch.Decktop.CSharp
                 webBrowser1.Url = new Uri(@"https://twitter.com/search?q=" + HttpUtility.UrlEncode(keywords[Cnt]));
                 if (Cnt == keywords.Length - 1)
                 {
+                    // Goto 1st keyword
                     Cnt = 0;
                 }
                 else
                 {
                     Cnt++;
                 }
+                
+                // set interval to rand
+                Random rand = new Random();
+                timer1.Interval = rand.Next(1000, Max_Cnt * 1000);
             }
             catch (Exception ex)
             {
-                Log.ErrorFormat(@"" + ex);
+                Log.Error(ex);
             }
-            //webBrowser1.Url = new Uri(@"https://twitter.com/search?q=" + HttpUtility.UrlEncode(keywords[Cnt]));
-            //if (Cnt == keywords.Length - 1)
-            //{
-            //    Cnt = 0;
-            //}
-            //else
-            //{
-            //    Cnt++;
-            //}
         }
 
         private void startToolStripMenuItem_Click(object sender, EventArgs e)
@@ -106,12 +102,14 @@ namespace iCAROS7.DoItSearch.Decktop.CSharp
             timer2.Enabled = false;
             Cnt = 0;
             Log.InfoFormat(@"검색 중지");
+            GC.Collect();
+            Log.InfoFormat(@"GC수집됨");
             MessageBox.Show(@"중지 되었습니다!", @"안내", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void maxIntervalToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string maxIntv = Microsoft.VisualBasic.Interaction.InputBox("검색을 할 사이에 잠깐 기다릴 최대 시간 초를 설정 합니다." + "\n" + "30을 입력하는 경우 3~30초 사이를 무작위로 기다립니다.", "검색 최대 간격 설정");
+            string maxIntv = Microsoft.VisualBasic.Interaction.InputBox("검색을 할 사이에 잠깐 기다릴 최대 시간 초(최소 3초)를 설정 합니다." + "\n" + "30을 입력하는 경우 1~30초 사이를 무작위로 기다립니다.", "검색 최대 간격 설정");
 
             Log.InfoFormat(@"최대 검색 시간 변경 : {0}", maxIntv);
             try
@@ -177,18 +175,6 @@ namespace iCAROS7.DoItSearch.Decktop.CSharp
                 @"검색 최대 간격 버튼을 눌러 검색 최대간격을 설정합니다. 기본적으로 10초입니다." + "\n" + 
                 @"시작을 눌러 검색을 시작합니다." + "\n" + "\n" + 
                 @"제작 : hominlab@minnote.net", @"도움말", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
-        private void Keyword_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                startToolStripMenuItem.PerformClick();
-                e.Handled = true;
-            }
-            else
-            {
-                return;
-            }
         }
     }
 }
