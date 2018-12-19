@@ -11,6 +11,8 @@ using System.Web;
 using Microsoft.VisualBasic;
 using System.Reflection;
 using System.IO;
+using log4net.Config;
+
 
 namespace iCAROS7.DoItSearch.Decktop.CSharp
 {
@@ -68,7 +70,7 @@ namespace iCAROS7.DoItSearch.Decktop.CSharp
             }
             catch (Exception ex)
             {
-                MessageBox.Show(@"" + ex);
+                Log.ErrorFormat(@"" + ex);
             }
             //webBrowser1.Url = new Uri(@"https://twitter.com/search?q=" + HttpUtility.UrlEncode(keywords[Cnt]));
             //if (Cnt == keywords.Length - 1)
