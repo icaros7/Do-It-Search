@@ -58,18 +58,23 @@ namespace iCAROS7.DoItSearch.Decktop.CSharp
         {
             try
             {
-                webBrowser1.Url = new Uri(@"https://twitter.com/search?q=" + HttpUtility.UrlEncode(keywords[Cnt]));
+                WebBrowser wb = new WebBrowser();
+                wb.Url = new Uri(@"https://twitter.com/search?q=" + HttpUtility.UrlEncode(keywords[Cnt]));
+                wb.Dock = DockStyle.Fill;
+                wb.Visible = true;
+                wb.Anchor = AnchorStyles.Left;
+                //webBrowser1.Url = new Uri(@"https://twitter.com/search?q=" + HttpUtility.UrlEncode(keywords[Cnt]));
                 if (Cnt == keywords.Length - 1)
                 {
                     // Goto 1st keyword
                     Cnt = 0;
-                    GC.Collect();
                 }
                 else
                 {
                     Cnt++;
                 }
-                
+
+                wb.Dispose();
                 // set interval to rand
                 Random rand = new Random();
                 timer1.Interval = rand.Next(1000, Max_Cnt * 1000);
@@ -104,12 +109,13 @@ namespace iCAROS7.DoItSearch.Decktop.CSharp
             Cnt = 0;
             Log.InfoFormat(@"검색 중지");
             GC.Collect();
+            Log.ErrorFormat(@"GC 수집됨");
             MessageBox.Show(@"중지 되었습니다!", @"안내", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void maxIntervalToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string maxIntv = Microsoft.VisualBasic.Interaction.InputBox("검색을 할 사이에 잠깐 기다릴 최대 시간 초(최소 3초)를 설정 합니다." + "\n" + "30을 입력하는 경우 1~30초 사이를 무작위로 기다립니다.", "검색 최대 간격 설정");
+            string maxIntv = Microsoft.VisualBasic.Interaction.InputBox("검색을 할 사이에 잠깐 기다릴 최대 시간 초(최소 3초)를 설정 합니다." + "\n" + "30을 입력하는 경우 1~30초 사이를 무작위로 기다립니다.", "검색 최대 간격 설정", @"" + Max_Cnt);
 
             Log.InfoFormat(@"최대 검색 시간 변경 : {0}", maxIntv);
             try
