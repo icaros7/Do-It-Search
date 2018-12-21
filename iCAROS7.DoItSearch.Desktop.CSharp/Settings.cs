@@ -15,6 +15,7 @@ namespace iCAROS7.DoItSearch.Decktop.CSharp
         public int Max_Cnt { get; set; }
         public bool LoadAtStart { get; set; }
         public int SearchOption { get; set; }
+        public string LastLang { get; set; }
 
         #endregion
 

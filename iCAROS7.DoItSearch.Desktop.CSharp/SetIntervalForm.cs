@@ -45,5 +45,16 @@ namespace iCAROS7.DoItSearch.Decktop.CSharp
                 e.Handled = true;
             }
         }
+
+        private void SetIntervalForm_Load(object sender, EventArgs e)
+        {
+            // Apply Local
+            label1.Text = strLang.setInterval_label1;
+            label2.Text = strLang.setInterval_label2;
+            label3.Text = strLang.setInterval_label3;
+            this.Text = strLang.maxIntervalToolStripMenuItem + strLang.Setup;
+            button1.Text = strLang.OKBtn;
+            button2.Text = strLang.CancelBtn;
+        }
     }
 }

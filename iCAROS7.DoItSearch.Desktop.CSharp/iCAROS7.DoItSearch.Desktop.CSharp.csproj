@@ -67,6 +67,11 @@
       <DependentUpon>SetIntervalForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Settings.cs" />
+    <Compile Include="strLang.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>strLang.resx</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -81,6 +86,11 @@
     </Compile>
     <EmbeddedResource Include="SetIntervalForm.resx">
       <DependentUpon>SetIntervalForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="strLang.ko.resx" />
+    <EmbeddedResource Include="strLang.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>strLang.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

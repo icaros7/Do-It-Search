@@ -11,6 +11,8 @@ using System.Web;
 using System.Reflection;
 using System.IO;
 using log4net.Config;
+using System.Globalization;
+using System.Threading;
 
 
 namespace iCAROS7.DoItSearch.Decktop.CSharp
@@ -30,13 +32,19 @@ namespace iCAROS7.DoItSearch.Decktop.CSharp
             if (Settings.Instance.LoadAtStart == true)
             {
                 loadSettings();
+                ChangeLang(Settings.Instance.LastLang);
+            }
+            else
+            {
+                applyLocale(CultureInfo.CurrentUICulture.Name.Substring(0, 2));
             }
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            Log.InfoFormat(@"프로그램 실행");
-            MainBtn.Text = @"시작 (&E)";
+            Log.InfoFormat(strLang.Log_Form_Load);
+            MainBtn.Text = strLang.MainBtn_Start;
+            Status.Text = strLang.Status_Wait;
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -49,11 +57,11 @@ namespace iCAROS7.DoItSearch.Decktop.CSharp
                 // Status Labeling
                 if (keywords[Cnt].Length < 10)
                 {
-                    Status.Text = keywords[Cnt] + @" 검색 중";
+                    Status.Text = keywords[Cnt] + strLang.Status_Searching;
                 }
                 else
                 {
-                    Status.Text = keywords[Cnt].Substring(0, 9) + @"... 검색 중";
+                    Status.Text = keywords[Cnt].Substring(0, 9) + strLang.Status_Searching_Long;
                 }
 
                 // Multi-Keyword Searching
@@ -77,10 +85,10 @@ namespace iCAROS7.DoItSearch.Decktop.CSharp
             }
             catch (Exception ex)
             {
-                Log.ErrorFormat(@"프로세스 오류 : ");
+                Log.ErrorFormat(strLang.Log_Error_Process);
                 Log.Error(ex);
                 Status.ForeColor = System.Drawing.Color.Red;
-                Status.Text = @"검색 오류 (로그 참조)";
+                Status.Text = strLang.Status_Searching_Error;
             }
         }
 
@@ -109,21 +117,21 @@ namespace iCAROS7.DoItSearch.Decktop.CSharp
                     Settings.Instance.SearchOption = 1;
                 }
                 Settings.Instance.Save();
-                Log.InfoFormat(@"설정 저장 완료");
-                MessageBox.Show(@"저장되었습니다!", @"안내", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Log.InfoFormat(strLang.Log_Save);
+                MessageBox.Show(strLang.Save_Saved, strLang.Information, MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
-                Log.ErrorFormat(@"설정 저장 오류 : ");
+                Log.ErrorFormat(strLang.Log_Error_Save);
                 Log.Error(ex);
-                MessageBox.Show(@"설정 저장 오류. 로그를 확인하세요.", @"오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(strLang.Save_Saved_Error, strLang.Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void loadToolStripMenuItem_Click(object sender, EventArgs e)
         {
             loadSettings();
-            MessageBox.Show(@"불러왔습니다!", @"안내", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show(strLang.Load_Loaded, strLang.Information, MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void loadSettings()
@@ -141,13 +149,13 @@ namespace iCAROS7.DoItSearch.Decktop.CSharp
                 {
                     radioButton1.Checked = true;
                 }
-                Log.InfoFormat(@"설정 불러오기 완료");
+                Log.InfoFormat(strLang.Log_Load);
             }
             catch (Exception ex)
             {
-                Log.ErrorFormat(@"설정 불러오기 오류 : ");
+                Log.ErrorFormat(strLang.Log_Error_Load);
                 Log.Error(ex);
-                MessageBox.Show(@"설정 불러오기 오류. 로그를 확인하세요.", @"오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(strLang.Load_Loaded_Error, strLang.Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -163,7 +171,7 @@ namespace iCAROS7.DoItSearch.Decktop.CSharp
                 Settings.Instance.LoadAtStart = false;
                 saveToolStripMenuItem.PerformClick();
             }
-            Log.InfoFormat(@"시작시 설정 불러오기 상태 전환");
+            Log.InfoFormat(strLang.Log_Changed_LoadAtStart);
         }
 
         private void timer2_Tick(object sender, EventArgs e)
@@ -174,54 +182,122 @@ namespace iCAROS7.DoItSearch.Decktop.CSharp
 
         private void HelpLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            MessageBox.Show(@"가장 앞쪽 하얀 박스에 검색할 텍스트를 입력합니다." + "\n" +
-                @"','(반점, 콤마) 기호를 이력하여 검색어를 구분합니다." + "\n" +
-                @"예시 : 트위터,#트위터" + "\n" + "\n" +
-                @"검색 최대 간격 버튼을 눌러 검색 최대간격을 설정합니다. 기본적으로 3초입니다." + "\n" +
-                @"시작을 눌러 검색을 시작합니다." + "\n" + "\n" +
-                @"제작 : hominlab@minnote.net", @"도움말", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show(strLang.Help_1 + "\n" +
+                strLang.Help_2 + "\n" + "\n" +
+                strLang.Help_3 + "\n" +
+                strLang.Help_4 + "\n" +
+                strLang.Help_5 + "\n" +
+                strLang.Help_6 + "\n" + "\n" +
+                strLang.Help_7 + "\n" +
+                strLang.Help_8 + "\n" + "\n" +
+                strLang.Help_9,
+                strLang.Help_Title, MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void MainBtn_Click(object sender, EventArgs e)
         {
-            if (MainBtn.Text == @"시작 (&E)")
+            if (MainBtn.Text == strLang.MainBtn_Start)
             {
                 if (Keyword.Text != "")
                 {
                     keywords = Keyword.Text.Split(',');
                     startTime = DateTime.Now;
                     label1.Text = @"00:00:00";
-                    Log.InfoFormat(@"검색 시작 : {0}", Keyword.Text);
-                    MainBtn.Text = @"중지 (&E)";
+                    Log.InfoFormat(strLang.Status_Start + @" : {0}", Keyword.Text);
+                    MainBtn.Text = strLang.MainBtn_Stop;
                     timer1.Interval = Max_Cnt * 1000;
                     timer1.Enabled = true;
                     timer2.Enabled = true;
                     Status.ForeColor = System.Drawing.Color.Black;
-                    Status.Text = @"검색 시작";
+                    Status.Text = strLang.Status_Start;
                 }
                 else
                 {
-                    MessageBox.Show(@"검색 키워드를 입력해 주세요.", @"오류", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show(strLang.Error_Type_Keyword, strLang.Error, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
-            else if (MainBtn.Text == @"중지 (&E)")
+            else if (MainBtn.Text == strLang.MainBtn_Stop)
             {
-                MainBtn.Text = @"시작 (&E)";
+                MainBtn.Text = strLang.MainBtn_Start;
                 timer1.Enabled = false;
                 timer2.Enabled = false;
                 Cnt = 0;
-                Log.InfoFormat(@"검색 중지");
+                Log.InfoFormat(strLang.Status_Stop);
                 Status.ForeColor = System.Drawing.Color.Black;
-                Status.Text = @"검색 중지";
-                MessageBox.Show(@"중지 되었습니다!", @"안내", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                Status.Text = @"작업을 기다리는 중...";
+                Status.Text = strLang.Status_Stop;
+                MessageBox.Show(strLang.Msg_Stop, strLang.Information, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Status.Text = strLang.Status_Wait;
             }
             else
             {
-                MessageBox.Show(@"프로그램이 정상적으로 실행되지 않았습니다!" + "\n" +
-                    @"재시작을 위해 종료 합니다!", @"비정상 실행 오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                Log.ErrorFormat(@"Form Initialize 혹은 Load 실패");
+                MessageBox.Show(strLang.Msg_abnormal_1 + "\n" +
+                    strLang.Msg_abnormal_2, strLang.Msg_abnormal_Title, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Log.ErrorFormat(strLang.Log_abnormal);
                 Application.Exit();
+            }
+        }
+
+        private void ChangeLang(string lang)
+        {
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(lang);
+            Settings.Instance.LastLang = lang;
+            Settings.Instance.Save();
+            applyLocale(lang);
+        }
+
+        private void langKOToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(strLang.Msg_Lang_Change_Log, strLang.Information, MessageBoxButtons.OK, MessageBoxIcon.Information);
+            loggingLangChange("ko");
+            ChangeLang("ko");
+        }
+
+        private void langENToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(strLang.Msg_Lang_Change_Log, strLang.Information, MessageBoxButtons.OK, MessageBoxIcon.Information);
+            loggingLangChange("en");
+            ChangeLang("en");
+        }
+
+        private void loggingLangChange(string lang)
+        {
+            Log.InfoFormat(strLang.Log_Lang_Change + @" : " + CultureInfo.CurrentUICulture.Name.Substring(0, 2) + @" -> " + lang);
+        }
+
+        private void applyLocale(string lang)
+        {
+            if (MainBtn.Text == "시작 (&E)" || MainBtn.Text == "Start (&E)" || MainBtn.Text == "MainBtn")
+            {
+                maxIntervalToolStripMenuItem.Text = strLang.maxIntervalToolStripMenuItem;
+                Setup_ToolStripMenuItem.Text = strLang.Setup_ToolStripMenuItem;
+                Status_Label.Text = strLang.Status_Label;
+                Search_Keyword_Label.Text = strLang.Search_Keyword_Label;
+                Running_Time.Text = strLang.Running_Time;
+                Interval_Type.Text = strLang.Interval_Type;
+                radioButton0.Text = strLang.radioButton0;
+                radioButton1.Text = strLang.radioButton1;
+                HelpLabel.Text = strLang.Help_Label;
+                MainBtn.Text = strLang.MainBtn_Start;
+                Status.Text = strLang.Status_Wait;
+                if (lang != "ko")
+                {
+                    Status_Label.Location = new Point(52,36);
+                    Search_Keyword_Label.Location = new Point(35, 66);
+                    Running_Time.Location = new Point(60, 96);
+                    Interval_Type.Location = new Point(43, 125);
+                }
+                else
+                {
+                    Status_Label.Location = new Point(65, 36);
+                    Search_Keyword_Label.Location = new Point(15, 66);
+                    Running_Time.Location = new Point(30, 96);
+                    Interval_Type.Location = new Point(30, 125);
+                }
+            }
+            else
+            {
+                MessageBox.Show(strLang.Msg_Change_HaveTo_Waiting, strLang.Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
         }
     }

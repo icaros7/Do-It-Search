@@ -108,6 +108,7 @@
             this.Name = "SetIntervalForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "검색 간격 설정";
+            this.Load += new System.EventHandler(this.SetIntervalForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
