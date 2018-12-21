@@ -1,6 +1,6 @@
 ﻿namespace iCAROS7.DoItSearch.Decktop.CSharp
 {
-    partial class Form1
+    partial class MainForm
     {
         /// <summary>
         /// 필수 디자이너 변수입니다.
@@ -30,8 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.startToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.stopToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.maxIntervalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Setup_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -47,7 +45,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton0 = new System.Windows.Forms.RadioButton();
             this.Status_Label = new System.Windows.Forms.Label();
             this.Status = new System.Windows.Forms.Label();
             this.MainBtn = new System.Windows.Forms.Button();
@@ -59,8 +57,6 @@
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.startToolStripMenuItem,
-            this.stopToolStripMenuItem,
             this.maxIntervalToolStripMenuItem,
             this.Setup_ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
@@ -70,27 +66,11 @@
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // startToolStripMenuItem
-            // 
-            this.startToolStripMenuItem.Name = "startToolStripMenuItem";
-            this.startToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.E)));
-            this.startToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
-            this.startToolStripMenuItem.Text = "시작";
-            this.startToolStripMenuItem.Click += new System.EventHandler(this.startToolStripMenuItem_Click);
-            // 
-            // stopToolStripMenuItem
-            // 
-            this.stopToolStripMenuItem.Name = "stopToolStripMenuItem";
-            this.stopToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.R)));
-            this.stopToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
-            this.stopToolStripMenuItem.Text = "멈춤";
-            this.stopToolStripMenuItem.Click += new System.EventHandler(this.stopToolStripMenuItem_Click);
-            // 
             // maxIntervalToolStripMenuItem
             // 
             this.maxIntervalToolStripMenuItem.Name = "maxIntervalToolStripMenuItem";
-            this.maxIntervalToolStripMenuItem.Size = new System.Drawing.Size(99, 20);
-            this.maxIntervalToolStripMenuItem.Text = "검색 최대 간격";
+            this.maxIntervalToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
+            this.maxIntervalToolStripMenuItem.Text = "검색 간격";
             this.maxIntervalToolStripMenuItem.Click += new System.EventHandler(this.maxIntervalToolStripMenuItem_Click);
             // 
             // Setup_ToolStripMenuItem
@@ -211,16 +191,16 @@
             this.radioButton1.Text = "무작위";
             this.radioButton1.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // radioButton0
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(120, 123);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(72, 24);
-            this.radioButton2.TabIndex = 8;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "고정형";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButton0.AutoSize = true;
+            this.radioButton0.Location = new System.Drawing.Point(120, 123);
+            this.radioButton0.Name = "radioButton0";
+            this.radioButton0.Size = new System.Drawing.Size(72, 24);
+            this.radioButton0.TabIndex = 8;
+            this.radioButton0.TabStop = true;
+            this.radioButton0.Text = "고정형";
+            this.radioButton0.UseVisualStyleBackColor = true;
             // 
             // Status_Label
             // 
@@ -234,6 +214,7 @@
             // Status
             // 
             this.Status.AutoSize = true;
+            this.Status.ForeColor = System.Drawing.Color.Black;
             this.Status.Location = new System.Drawing.Point(116, 36);
             this.Status.Name = "Status";
             this.Status.Size = new System.Drawing.Size(148, 20);
@@ -246,8 +227,9 @@
             this.MainBtn.Name = "MainBtn";
             this.MainBtn.Size = new System.Drawing.Size(111, 38);
             this.MainBtn.TabIndex = 11;
-            this.MainBtn.Text = "시작";
+            this.MainBtn.Text = "MainBtn";
             this.MainBtn.UseVisualStyleBackColor = true;
+            this.MainBtn.Click += new System.EventHandler(this.MainBtn_Click);
             // 
             // HelpLabel
             // 
@@ -260,7 +242,7 @@
             this.HelpLabel.Text = "도움말(&H)";
             this.HelpLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.HelpLabel_LinkClicked);
             // 
-            // Form1
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -269,7 +251,7 @@
             this.Controls.Add(this.MainBtn);
             this.Controls.Add(this.Status);
             this.Controls.Add(this.Status_Label);
-            this.Controls.Add(this.radioButton2);
+            this.Controls.Add(this.radioButton0);
             this.Controls.Add(this.radioButton1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -281,7 +263,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
-            this.Name = "Form1";
+            this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Do It Search";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -294,8 +276,6 @@
 
         #endregion
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem startToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem stopToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem Setup_ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem loadToolStripMenuItem;
@@ -311,7 +291,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton radioButton0;
         private System.Windows.Forms.Label Status_Label;
         private System.Windows.Forms.Label Status;
         private System.Windows.Forms.Button MainBtn;
