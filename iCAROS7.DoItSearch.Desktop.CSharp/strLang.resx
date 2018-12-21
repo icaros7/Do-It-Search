@@ -1,0 +1,298 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="CancelBtn" xml:space="preserve">
+    <value>Cancel (&amp;C)</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="Error_Type_Keyword" xml:space="preserve">
+    <value>Please type searching keyword</value>
+  </data>
+  <data name="exitToolStripMenuItem" xml:space="preserve">
+    <value>Exit</value>
+  </data>
+  <data name="Help_1" xml:space="preserve">
+    <value>Setup searching keyword. You can split by ',' symbol (comma).</value>
+    <comment> </comment>
+  </data>
+  <data name="Help_2" xml:space="preserve">
+    <value>Example : Twitter,TwTwitter,#Twiter (Support # Searching)</value>
+  </data>
+  <data name="Help_3" xml:space="preserve">
+    <value>Setup searching waiting interval due next searching.</value>
+  </data>
+  <data name="Help_4" xml:space="preserve">
+    <value>Fixed option will be waiting fixed time.</value>
+  </data>
+  <data name="Help_5" xml:space="preserve">
+    <value>Random option will be waiting random time until setup time.</value>
+  </data>
+  <data name="Help_6" xml:space="preserve">
+    <value>You can edit setup time, click 'Searching Interval' at top.</value>
+  </data>
+  <data name="Help_7" xml:space="preserve">
+    <value>If you want to load saved settings (Include Language),</value>
+  </data>
+  <data name="Help_8" xml:space="preserve">
+    <value>Just checking 'Settings' -&gt; 'Load at Startup'</value>
+  </data>
+  <data name="Help_9" xml:space="preserve">
+    <value>Powered by hominlab@minnote.net</value>
+  </data>
+  <data name="Help_Label" xml:space="preserve">
+    <value>Help (&amp;H)</value>
+  </data>
+  <data name="Help_Title" xml:space="preserve">
+    <value>Help</value>
+  </data>
+  <data name="Information" xml:space="preserve">
+    <value>Information</value>
+  </data>
+  <data name="Interval_Type" xml:space="preserve">
+    <value>Interval :</value>
+  </data>
+  <data name="loadAtStartToolStripMenuItem" xml:space="preserve">
+    <value>Load at Startup</value>
+  </data>
+  <data name="loadToolStripMenuItem" xml:space="preserve">
+    <value>Load</value>
+  </data>
+  <data name="Load_Loaded" xml:space="preserve">
+    <value>Success to Load!</value>
+  </data>
+  <data name="Load_Loaded_Error" xml:space="preserve">
+    <value>Failed to load. Please check log.</value>
+  </data>
+  <data name="Log_abnormal" xml:space="preserve">
+    <value>Failed to Form Initialize or Load</value>
+  </data>
+  <data name="Log_Changed_LoadAtStart" xml:space="preserve">
+    <value>Change Load at Startup Status</value>
+  </data>
+  <data name="Log_Error_Load" xml:space="preserve">
+    <value>Load Settings Error :</value>
+  </data>
+  <data name="Log_Error_Process" xml:space="preserve">
+    <value>Process Error :</value>
+  </data>
+  <data name="Log_Error_Save" xml:space="preserve">
+    <value>Save Settings Error :</value>
+  </data>
+  <data name="Log_Form_Load" xml:space="preserve">
+    <value>Application launched</value>
+  </data>
+  <data name="Log_Lang_Change" xml:space="preserve">
+    <value>Changed Language</value>
+  </data>
+  <data name="Log_Load" xml:space="preserve">
+    <value>Save Settings</value>
+  </data>
+  <data name="Log_Save" xml:space="preserve">
+    <value>Load Settings</value>
+  </data>
+  <data name="MainBtn_Start" xml:space="preserve">
+    <value>Start (&amp;E)</value>
+  </data>
+  <data name="MainBtn_Stop" xml:space="preserve">
+    <value>Stop (&amp;E)</value>
+  </data>
+  <data name="maxIntervalToolStripMenuItem" xml:space="preserve">
+    <value>Searching Interval</value>
+  </data>
+  <data name="Msg_abnormal_1" xml:space="preserve">
+    <value>Application was running in abnormal!</value>
+  </data>
+  <data name="Msg_abnormal_2" xml:space="preserve">
+    <value>Exit to restart!</value>
+  </data>
+  <data name="Msg_abnormal_Title" xml:space="preserve">
+    <value>Abnormal Running Error</value>
+  </data>
+  <data name="Msg_Change_HaveTo_Waiting" xml:space="preserve">
+    <value>If you change the language, must be in waiting status.</value>
+  </data>
+  <data name="Msg_Lang_Change_Log" xml:space="preserve">
+    <value>The log will be displayed in the previous language until the application is restart.</value>
+  </data>
+  <data name="Msg_Stop" xml:space="preserve">
+    <value>Success to Stop!</value>
+  </data>
+  <data name="OKBtn" xml:space="preserve">
+    <value>OK (&amp;E)</value>
+  </data>
+  <data name="radioButton0" xml:space="preserve">
+    <value>Fixed</value>
+  </data>
+  <data name="radioButton1" xml:space="preserve">
+    <value>Random</value>
+  </data>
+  <data name="Running_Time" xml:space="preserve">
+    <value>Time :</value>
+  </data>
+  <data name="saveToolStripMenuItem" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="Save_Saved" xml:space="preserve">
+    <value>Success to Save!</value>
+  </data>
+  <data name="Save_Saved_Error" xml:space="preserve">
+    <value>Failed to save. Please check log.</value>
+  </data>
+  <data name="Search_Keyword_Label" xml:space="preserve">
+    <value>Keyword :</value>
+  </data>
+  <data name="setInterval_label1" xml:space="preserve">
+    <value>You can setup interval time what waiting time between search.</value>
+  </data>
+  <data name="setInterval_label2" xml:space="preserve">
+    <value>Fixed option will be waiting fixed time.</value>
+  </data>
+  <data name="setInterval_label3" xml:space="preserve">
+    <value>Random option will be waiting random time until setup time.</value>
+  </data>
+  <data name="Setup" xml:space="preserve">
+    <value>Setup</value>
+  </data>
+  <data name="Setup_ToolStripMenuItem" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="Status_Label" xml:space="preserve">
+    <value>Status :</value>
+  </data>
+  <data name="Status_Searching" xml:space="preserve">
+    <value> - Searching</value>
+  </data>
+  <data name="Status_Searching_Error" xml:space="preserve">
+    <value>Search Error (Check log)</value>
+  </data>
+  <data name="Status_Searching_Long" xml:space="preserve">
+    <value>... - Searching</value>
+  </data>
+  <data name="Status_Start" xml:space="preserve">
+    <value>Starting Searching</value>
+  </data>
+  <data name="Status_Stop" xml:space="preserve">
+    <value>Stop Searching</value>
+  </data>
+  <data name="Status_Wait" xml:space="preserve">
+    <value>Waiting for work...</value>
+  </data>
+</root>

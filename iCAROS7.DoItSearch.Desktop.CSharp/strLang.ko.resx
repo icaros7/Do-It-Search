@@ -1,0 +1,297 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="CancelBtn" xml:space="preserve">
+    <value>취소 (&amp;C)</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>오류</value>
+  </data>
+  <data name="Error_Type_Keyword" xml:space="preserve">
+    <value>검색 키워드를 입력해 주세요.</value>
+  </data>
+  <data name="exitToolStripMenuItem" xml:space="preserve">
+    <value>종료</value>
+  </data>
+  <data name="Help_1" xml:space="preserve">
+    <value>검색 키워드를 ',' 기호(반점, 콤마)로 구분하여 설정합니다.</value>
+  </data>
+  <data name="Help_2" xml:space="preserve">
+    <value>예시 : 트위터,트위터터,#트위터 (#검색 지원)</value>
+  </data>
+  <data name="Help_3" xml:space="preserve">
+    <value>검색 간격 타입을 설정합니다.</value>
+  </data>
+  <data name="Help_4" xml:space="preserve">
+    <value>고정형의 경우 설정한 시간을 기다린 다음 검색합니다.</value>
+  </data>
+  <data name="Help_5" xml:space="preserve">
+    <value>무작위의 경우 30초를 설정하시면 1~30초를 무작위로 기다린 다음 검색합니다.</value>
+  </data>
+  <data name="Help_6" xml:space="preserve">
+    <value>설정한 시간은 상단 '검색 간격'을 클릭하여 설정 가능합니다.</value>
+  </data>
+  <data name="Help_7" xml:space="preserve">
+    <value>앱 시작시 저장된 설정(언어)을 자동으로 불러오고 싶은 경우,</value>
+  </data>
+  <data name="Help_8" xml:space="preserve">
+    <value>상단 '설정' -&gt; '시작시 자동으로 불러오기'를 체크하시면 됩니다.</value>
+  </data>
+  <data name="Help_9" xml:space="preserve">
+    <value>제작 : hominlab@minnote.net</value>
+  </data>
+  <data name="Help_Label" xml:space="preserve">
+    <value>도움말 (&amp;H)</value>
+  </data>
+  <data name="Help_Title" xml:space="preserve">
+    <value>도움말</value>
+  </data>
+  <data name="Information" xml:space="preserve">
+    <value>안내</value>
+  </data>
+  <data name="Interval_Type" xml:space="preserve">
+    <value>검색 간격 :</value>
+  </data>
+  <data name="loadAtStartToolStripMenuItem" xml:space="preserve">
+    <value>시작시 자동 불러오기</value>
+  </data>
+  <data name="loadToolStripMenuItem" xml:space="preserve">
+    <value>불러오기</value>
+  </data>
+  <data name="Load_Loaded" xml:space="preserve">
+    <value>불러왔습니다!</value>
+  </data>
+  <data name="Load_Loaded_Error" xml:space="preserve">
+    <value>설정 불러오기 오류. 로그를 확인하세요.</value>
+  </data>
+  <data name="Log_abnormal" xml:space="preserve">
+    <value>Form Initialize 혹은 Load 실패</value>
+  </data>
+  <data name="Log_Changed_LoadAtStart" xml:space="preserve">
+    <value>시작시 설정 불러오기 상태 전환</value>
+  </data>
+  <data name="Log_Error_Load" xml:space="preserve">
+    <value>설정 불러오기 오류 :</value>
+  </data>
+  <data name="Log_Error_Process" xml:space="preserve">
+    <value>프로세스 오류 :</value>
+  </data>
+  <data name="Log_Error_Save" xml:space="preserve">
+    <value>설정 저장 오류 :</value>
+  </data>
+  <data name="Log_Form_Load" xml:space="preserve">
+    <value>어플리케이션 실행</value>
+  </data>
+  <data name="Log_Lang_Change" xml:space="preserve">
+    <value>언어 변경</value>
+  </data>
+  <data name="Log_Load" xml:space="preserve">
+    <value>설정 불러오기</value>
+  </data>
+  <data name="Log_Save" xml:space="preserve">
+    <value>설정 저장</value>
+  </data>
+  <data name="MainBtn_Start" xml:space="preserve">
+    <value>시작 (&amp;E)</value>
+  </data>
+  <data name="MainBtn_Stop" xml:space="preserve">
+    <value>중지 (&amp;E)</value>
+  </data>
+  <data name="maxIntervalToolStripMenuItem" xml:space="preserve">
+    <value>검색 간격</value>
+  </data>
+  <data name="Msg_abnormal_1" xml:space="preserve">
+    <value>어플리케이션이 정상적으로 실행되지 않았습니다!</value>
+  </data>
+  <data name="Msg_abnormal_2" xml:space="preserve">
+    <value>재시작을 위해 종료합니다!</value>
+  </data>
+  <data name="Msg_abnormal_Title" xml:space="preserve">
+    <value>비정상 실행 오류</value>
+  </data>
+  <data name="Msg_Change_HaveTo_Waiting" xml:space="preserve">
+    <value>언어를 바꾸기전에, 반드시 대기 상태이어야 합니다.</value>
+  </data>
+  <data name="Msg_Lang_Change_Log" xml:space="preserve">
+    <value>어플리케이션 재시작 전까지 로그는 이전 언어로 표시됩니다.</value>
+  </data>
+  <data name="Msg_Stop" xml:space="preserve">
+    <value>중지 되었습니다!</value>
+  </data>
+  <data name="OKBtn" xml:space="preserve">
+    <value>확인 (&amp;E)</value>
+  </data>
+  <data name="radioButton0" xml:space="preserve">
+    <value>고정형</value>
+  </data>
+  <data name="radioButton1" xml:space="preserve">
+    <value>무작위</value>
+  </data>
+  <data name="Running_Time" xml:space="preserve">
+    <value>검색 시간 :</value>
+  </data>
+  <data name="saveToolStripMenuItem" xml:space="preserve">
+    <value>저장</value>
+  </data>
+  <data name="Save_Saved" xml:space="preserve">
+    <value>저장되었습니다!</value>
+  </data>
+  <data name="Save_Saved_Error" xml:space="preserve">
+    <value>설정 저장 오류. 로그를 확인하세요.</value>
+  </data>
+  <data name="Search_Keyword_Label" xml:space="preserve">
+    <value>검색 키워드 :</value>
+  </data>
+  <data name="setInterval_label1" xml:space="preserve">
+    <value>검색을 할 사이에 잠깐 기다릴 최대 시간 초를 설정 합니다.</value>
+  </data>
+  <data name="setInterval_label2" xml:space="preserve">
+    <value>고정형의 경우 설정한 시간을 고정적으로 기다리고,</value>
+  </data>
+  <data name="setInterval_label3" xml:space="preserve">
+    <value>무작위의 경우 30을 입력하는 경우 1~30초 사이를 무작위로 기다립니다.</value>
+  </data>
+  <data name="Setup" xml:space="preserve">
+    <value>설정</value>
+  </data>
+  <data name="Setup_ToolStripMenuItem" xml:space="preserve">
+    <value>설정</value>
+  </data>
+  <data name="Status_Label" xml:space="preserve">
+    <value>상태 :</value>
+  </data>
+  <data name="Status_Searching" xml:space="preserve">
+    <value> 검색 중</value>
+  </data>
+  <data name="Status_Searching_Error" xml:space="preserve">
+    <value>검색 오류 (로그 참조)</value>
+  </data>
+  <data name="Status_Searching_Long" xml:space="preserve">
+    <value>... 검색 중</value>
+  </data>
+  <data name="Status_Start" xml:space="preserve">
+    <value>검색 시작</value>
+  </data>
+  <data name="Status_Stop" xml:space="preserve">
+    <value>검색 중지</value>
+  </data>
+  <data name="Status_Wait" xml:space="preserve">
+    <value>작업을 기다리는 중...</value>
+  </data>
+</root>
