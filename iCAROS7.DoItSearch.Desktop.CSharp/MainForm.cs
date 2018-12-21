@@ -1,4 +1,13 @@
-﻿using System;
+﻿/*
+ * Do It Search: A Simple Twitter Searching Program
+ * 2018.12.17 / Homin Rhee
+ * 
+ * Github Repo : https://github.com/icaros7/Do-It-Search
+ * 
+ * Powered by hominlab@minnote.net
+ */
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -298,6 +307,10 @@ namespace iCAROS7.DoItSearch.Decktop.CSharp
                 HelpLabel.Text = strLang.Help_Label;
                 MainBtn.Text = strLang.MainBtn_Start;
                 Status.Text = strLang.Status_Wait;
+                saveToolStripMenuItem.Text = strLang.saveToolStripMenuItem;
+                loadAtStartToolStripMenuItem.Text = strLang.loadAtStartToolStripMenuItem;
+                loadToolStripMenuItem.Text = strLang.loadToolStripMenuItem;
+                exitToolStripMenuItem.Text = strLang.exitToolStripMenuItem;
                 if (lang != "ko") // Reconfig Some control location for Korean
                 {
                     Status_Label.Location = new Point(52,36);
@@ -318,6 +331,11 @@ namespace iCAROS7.DoItSearch.Decktop.CSharp
                 MessageBox.Show(strLang.Msg_Change_HaveTo_Waiting, strLang.Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+        }
+
+        private void githubToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start(@"https://github.com/icaros7/Do-It-Search");
         }
     }
 }

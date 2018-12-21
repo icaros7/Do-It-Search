@@ -55,6 +55,7 @@ namespace iCAROS7.DoItSearch.Decktop.CSharp
             this.Status = new System.Windows.Forms.Label();
             this.MainBtn = new System.Windows.Forms.Button();
             this.HelpLabel = new System.Windows.Forms.LinkLabel();
+            this.githubToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -109,6 +110,7 @@ namespace iCAROS7.DoItSearch.Decktop.CSharp
             this.loadToolStripMenuItem,
             this.loadAtStartToolStripMenuItem,
             this.toolStripMenuItem1,
+            this.githubToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.Setup_ToolStripMenuItem.Name = "Setup_ToolStripMenuItem";
             this.Setup_ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
@@ -118,37 +120,37 @@ namespace iCAROS7.DoItSearch.Decktop.CSharp
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
             this.saveToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
-            this.saveToolStripMenuItem.Text = global::iCAROS7.DoItSearch.Decktop.CSharp.strLang.saveToolStripMenuItem;
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.saveToolStripMenuItem.Text = "저장";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
             // loadToolStripMenuItem
             // 
             this.loadToolStripMenuItem.Name = "loadToolStripMenuItem";
             this.loadToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.L)));
-            this.loadToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
-            this.loadToolStripMenuItem.Text = global::iCAROS7.DoItSearch.Decktop.CSharp.strLang.loadToolStripMenuItem;
+            this.loadToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.loadToolStripMenuItem.Text = "불러오기";
             this.loadToolStripMenuItem.Click += new System.EventHandler(this.loadToolStripMenuItem_Click);
             // 
             // loadAtStartToolStripMenuItem
             // 
             this.loadAtStartToolStripMenuItem.CheckOnClick = true;
             this.loadAtStartToolStripMenuItem.Name = "loadAtStartToolStripMenuItem";
-            this.loadAtStartToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
-            this.loadAtStartToolStripMenuItem.Text = global::iCAROS7.DoItSearch.Decktop.CSharp.strLang.loadAtStartToolStripMenuItem;
+            this.loadAtStartToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
+            this.loadAtStartToolStripMenuItem.Text = "시작시 자동 불러오기";
             this.loadAtStartToolStripMenuItem.Click += new System.EventHandler(this.loadAtStartToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(154, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(177, 6);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.Q)));
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
-            this.exitToolStripMenuItem.Text = global::iCAROS7.DoItSearch.Decktop.CSharp.strLang.exitToolStripMenuItem;
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exitToolStripMenuItem.Text = "종료";
             // 
             // timer1
             // 
@@ -273,6 +275,13 @@ namespace iCAROS7.DoItSearch.Decktop.CSharp
             this.HelpLabel.Text = "도움말 (&H)";
             this.HelpLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.HelpLabel_LinkClicked);
             // 
+            // githubToolStripMenuItem
+            // 
+            this.githubToolStripMenuItem.Name = "githubToolStripMenuItem";
+            this.githubToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
+            this.githubToolStripMenuItem.Text = "Github";
+            this.githubToolStripMenuItem.Click += new System.EventHandler(this.githubToolStripMenuItem_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -330,6 +339,7 @@ namespace iCAROS7.DoItSearch.Decktop.CSharp
         private System.Windows.Forms.ToolStripMenuItem langToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem langKOToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem langENToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem githubToolStripMenuItem;
     }
 }
 
