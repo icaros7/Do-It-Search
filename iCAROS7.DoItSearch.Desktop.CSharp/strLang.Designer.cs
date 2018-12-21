@@ -268,6 +268,15 @@ namespace iCAROS7.DoItSearch.Decktop.CSharp {
         }
         
         /// <summary>
+        ///   Blank Keyword과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        internal static string Log_Error_Blank_Keyword {
+            get {
+                return ResourceManager.GetString("Log_Error_Blank_Keyword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Load Settings Error :과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         internal static string Log_Error_Load {

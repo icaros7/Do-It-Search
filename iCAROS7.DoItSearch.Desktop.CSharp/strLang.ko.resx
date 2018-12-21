@@ -186,6 +186,9 @@
   <data name="Log_Changed_LoadAtStart" xml:space="preserve">
     <value>시작시 설정 불러오기 상태 전환</value>
   </data>
+  <data name="Log_Error_Blank_Keyword" xml:space="preserve">
+    <value>키워드가 비어있음</value>
+  </data>
   <data name="Log_Error_Load" xml:space="preserve">
     <value>설정 불러오기 오류 :</value>
   </data>

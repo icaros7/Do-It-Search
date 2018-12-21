@@ -187,6 +187,9 @@
   <data name="Log_Changed_LoadAtStart" xml:space="preserve">
     <value>Change Load at Startup Status</value>
   </data>
+  <data name="Log_Error_Blank_Keyword" xml:space="preserve">
+    <value>Blank Keyword</value>
+  </data>
   <data name="Log_Error_Load" xml:space="preserve">
     <value>Load Settings Error :</value>
   </data>
