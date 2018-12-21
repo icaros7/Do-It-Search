@@ -35,8 +35,8 @@ namespace iCAROS7.DoItSearch.Decktop.CSharp
         protected int Max_Cnt = 5; // Max Interval time
         public MainForm()
         {
+            Log.InfoFormat(strLang.Log_Form_Load);
             InitializeComponent();
-
             // Load Settings
             if (Settings.Instance.LoadAtStart == true)
             {
@@ -65,7 +65,6 @@ namespace iCAROS7.DoItSearch.Decktop.CSharp
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            Log.InfoFormat(strLang.Log_Form_Load);
             MainBtn.Text = strLang.MainBtn_Start;
             Status.Text = strLang.Status_Wait;
         }
