@@ -131,7 +131,6 @@
   </data>
   <data name="Help_1" xml:space="preserve">
     <value>Setup searching keyword. You can split by ',' symbol (comma).</value>
-    <comment> </comment>
   </data>
   <data name="Help_2" xml:space="preserve">
     <value>Example : Twitter,TwTwitter,#Twiter (Support # Searching)</value>
@@ -297,5 +296,8 @@
   </data>
   <data name="Status_Wait" xml:space="preserve">
     <value>Waiting for work...</value>
+  </data>
+  <data name="Log_Exit" xml:space="preserve">
+    <value>Exit Application normally</value>
   </data>
 </root>

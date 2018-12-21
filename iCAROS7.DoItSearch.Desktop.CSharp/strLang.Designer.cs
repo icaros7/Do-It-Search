@@ -304,6 +304,15 @@ namespace iCAROS7.DoItSearch.Decktop.CSharp {
         }
         
         /// <summary>
+        ///   Exit Application normally과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        internal static string Log_Exit {
+            get {
+                return ResourceManager.GetString("Log_Exit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Application launched과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         internal static string Log_Form_Load {

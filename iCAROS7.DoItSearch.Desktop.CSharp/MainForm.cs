@@ -36,6 +36,7 @@ namespace iCAROS7.DoItSearch.Decktop.CSharp
         public MainForm()
         {
             Log.InfoFormat(strLang.Log_Form_Load);
+            this.FormClosing += new FormClosingEventHandler(MainForm_FormClosing);
             InitializeComponent();
             // Load Settings
             if (Settings.Instance.LoadAtStart == true)
@@ -63,10 +64,15 @@ namespace iCAROS7.DoItSearch.Decktop.CSharp
             }
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void MainForm_Load(object sender, EventArgs e)
         {
             MainBtn.Text = strLang.MainBtn_Start;
             Status.Text = strLang.Status_Wait;
+        }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Log.InfoFormat(strLang.Log_Exit);
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -266,10 +272,18 @@ namespace iCAROS7.DoItSearch.Decktop.CSharp
 
         private void ChangeLang(string lang)
         {
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo(lang);
-            Settings.Instance.LastLang = lang;
-            Settings.Instance.Save();
-            applyLocale(lang);
+            if (MainBtn.Text == "시작 (&E)" || MainBtn.Text == "Start (&E)" || MainBtn.Text == "MainBtn")
+            {
+                Thread.CurrentThread.CurrentUICulture = new CultureInfo(lang);
+                Settings.Instance.LastLang = lang;
+                Settings.Instance.Save();
+                applyLocale(lang);
+            }
+            else
+            {
+                MessageBox.Show(strLang.Msg_Change_HaveTo_Waiting, strLang.Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
         }
 
         private void langKOToolStripMenuItem_Click(object sender, EventArgs e)
@@ -293,42 +307,34 @@ namespace iCAROS7.DoItSearch.Decktop.CSharp
 
         private void applyLocale(string lang)
         {
-            if (MainBtn.Text == "시작 (&E)" || MainBtn.Text == "Start (&E)" || MainBtn.Text == "MainBtn")
+            maxIntervalToolStripMenuItem.Text = strLang.maxIntervalToolStripMenuItem;
+            Setup_ToolStripMenuItem.Text = strLang.Setup_ToolStripMenuItem;
+            Status_Label.Text = strLang.Status_Label;
+            Search_Keyword_Label.Text = strLang.Search_Keyword_Label;
+            Running_Time.Text = strLang.Running_Time;
+            Interval_Type.Text = strLang.Interval_Type;
+            radioButton0.Text = strLang.radioButton0;
+            radioButton1.Text = strLang.radioButton1;
+            HelpLabel.Text = strLang.Help_Label;
+            MainBtn.Text = strLang.MainBtn_Start;
+            Status.Text = strLang.Status_Wait;
+            saveToolStripMenuItem.Text = strLang.saveToolStripMenuItem;
+            loadAtStartToolStripMenuItem.Text = strLang.loadAtStartToolStripMenuItem;
+            loadToolStripMenuItem.Text = strLang.loadToolStripMenuItem;
+            exitToolStripMenuItem.Text = strLang.exitToolStripMenuItem;
+            if (lang != "ko") // Reconfig Some control location for Korean
             {
-                maxIntervalToolStripMenuItem.Text = strLang.maxIntervalToolStripMenuItem;
-                Setup_ToolStripMenuItem.Text = strLang.Setup_ToolStripMenuItem;
-                Status_Label.Text = strLang.Status_Label;
-                Search_Keyword_Label.Text = strLang.Search_Keyword_Label;
-                Running_Time.Text = strLang.Running_Time;
-                Interval_Type.Text = strLang.Interval_Type;
-                radioButton0.Text = strLang.radioButton0;
-                radioButton1.Text = strLang.radioButton1;
-                HelpLabel.Text = strLang.Help_Label;
-                MainBtn.Text = strLang.MainBtn_Start;
-                Status.Text = strLang.Status_Wait;
-                saveToolStripMenuItem.Text = strLang.saveToolStripMenuItem;
-                loadAtStartToolStripMenuItem.Text = strLang.loadAtStartToolStripMenuItem;
-                loadToolStripMenuItem.Text = strLang.loadToolStripMenuItem;
-                exitToolStripMenuItem.Text = strLang.exitToolStripMenuItem;
-                if (lang != "ko") // Reconfig Some control location for Korean
-                {
-                    Status_Label.Location = new Point(52,36);
-                    Search_Keyword_Label.Location = new Point(35, 66);
-                    Running_Time.Location = new Point(60, 96);
-                    Interval_Type.Location = new Point(43, 125);
-                }
-                else
-                {
-                    Status_Label.Location = new Point(65, 36);
-                    Search_Keyword_Label.Location = new Point(15, 66);
-                    Running_Time.Location = new Point(30, 96);
-                    Interval_Type.Location = new Point(30, 125);
-                }
+                Status_Label.Location = new Point(52, 36);
+                Search_Keyword_Label.Location = new Point(35, 66);
+                Running_Time.Location = new Point(60, 96);
+                Interval_Type.Location = new Point(43, 125);
             }
             else
             {
-                MessageBox.Show(strLang.Msg_Change_HaveTo_Waiting, strLang.Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+                Status_Label.Location = new Point(65, 36);
+                Search_Keyword_Label.Location = new Point(15, 66);
+                Running_Time.Location = new Point(30, 96);
+                Interval_Type.Location = new Point(30, 125);
             }
         }
 

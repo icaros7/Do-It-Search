@@ -297,4 +297,7 @@
   <data name="Status_Wait" xml:space="preserve">
     <value>작업을 기다리는 중...</value>
   </data>
+  <data name="Log_Exit" xml:space="preserve">
+    <value>어플리케이션 정상 종료</value>
+  </data>
 </root>
