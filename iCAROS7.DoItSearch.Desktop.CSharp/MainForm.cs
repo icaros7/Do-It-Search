@@ -20,10 +20,10 @@ namespace iCAROS7.DoItSearch.Decktop.CSharp
     public partial class MainForm : Form
     {
         static readonly log4net.ILog Log = log4net.LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
-        private int Cnt = 0;
-        private string[] keywords;
-        private DateTime startTime;
-        protected int Max_Cnt = 5;
+        private int Cnt = 0; // Keyword's count
+        private string[] keywords; // Stroage for split keyword by ','
+        private DateTime startTime; // Stroage for Running time
+        protected int Max_Cnt = 5; // Max Interval time
         public MainForm()
         {
             InitializeComponent();
@@ -34,7 +34,7 @@ namespace iCAROS7.DoItSearch.Decktop.CSharp
                 try
                 {
                     loadSettings();
-                    if (Settings.Instance.LastLang == null)
+                    if (Settings.Instance.LastLang == null) // Prevent Crashing, if updating old version
                     {
                         Settings.Instance.LastLang = "ko";
                         Settings.Instance.Save();
@@ -50,7 +50,7 @@ namespace iCAROS7.DoItSearch.Decktop.CSharp
             }
             else
             {
-                applyLocale(CultureInfo.CurrentUICulture.Name.Substring(0, 2));
+                applyLocale(CultureInfo.CurrentUICulture.Name.Substring(0, 2)); // This Application doesn't support region code.
             }
         }
 
@@ -89,7 +89,7 @@ namespace iCAROS7.DoItSearch.Decktop.CSharp
                     Cnt++;
                 }
 
-                wb.Dispose();
+                wb.Dispose(); // Dispose oject for prevent RAM leak
                 if (radioButton1.Checked == true)
                 {
                     // set interval to rand
@@ -154,7 +154,7 @@ namespace iCAROS7.DoItSearch.Decktop.CSharp
             {
                 Keyword.Text = Settings.Instance.Keyword;
                 Max_Cnt = Settings.Instance.Max_Cnt;
-                if (Max_Cnt < 1)
+                if (Max_Cnt < 1) // Prevent crash If settings value is 0
                 {
                     Max_Cnt = 5;
                 }
@@ -192,7 +192,7 @@ namespace iCAROS7.DoItSearch.Decktop.CSharp
             Log.InfoFormat(strLang.Log_Changed_LoadAtStart);
         }
 
-        private void timer2_Tick(object sender, EventArgs e)
+        private void timer2_Tick(object sender, EventArgs e) // Running Timer
         {
             TimeSpan span = new TimeSpan(DateTime.Now.Ticks - startTime.Ticks);
             label1.Text = span.ToString(@"hh\:mm\:ss");
@@ -298,7 +298,7 @@ namespace iCAROS7.DoItSearch.Decktop.CSharp
                 HelpLabel.Text = strLang.Help_Label;
                 MainBtn.Text = strLang.MainBtn_Start;
                 Status.Text = strLang.Status_Wait;
-                if (lang != "ko")
+                if (lang != "ko") // Reconfig Some control location for Korean
                 {
                     Status_Label.Location = new Point(52,36);
                     Search_Keyword_Label.Location = new Point(35, 66);
