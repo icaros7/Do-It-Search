@@ -30,20 +30,28 @@
         {
             this.components = new System.ComponentModel.Container();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.Keyword = new System.Windows.Forms.ToolStripTextBox();
             this.startToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.stopToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.maxIntervalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.howToUseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Setup_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loadAtStartToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.label1 = new System.Windows.Forms.ToolStripTextBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.Search_Keyword_Label = new System.Windows.Forms.Label();
+            this.Keyword = new System.Windows.Forms.TextBox();
+            this.Running_Time = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.Status_Label = new System.Windows.Forms.Label();
+            this.Status = new System.Windows.Forms.Label();
+            this.MainBtn = new System.Windows.Forms.Button();
+            this.HelpLabel = new System.Windows.Forms.LinkLabel();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,32 +59,22 @@
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.Keyword,
             this.startToolStripMenuItem,
             this.stopToolStripMenuItem,
             this.maxIntervalToolStripMenuItem,
-            this.howToUseToolStripMenuItem,
-            this.Setup_ToolStripMenuItem,
-            this.label1});
+            this.Setup_ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
-            this.menuStrip1.Size = new System.Drawing.Size(770, 25);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(355, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
-            // 
-            // Keyword
-            // 
-            this.Keyword.Name = "Keyword";
-            this.Keyword.Size = new System.Drawing.Size(211, 23);
-            this.Keyword.ToolTipText = "검색할 단어를 입력해주세요.";
-            this.Keyword.Click += new System.EventHandler(this.Keyword_Click);
             // 
             // startToolStripMenuItem
             // 
             this.startToolStripMenuItem.Name = "startToolStripMenuItem";
             this.startToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.E)));
-            this.startToolStripMenuItem.Size = new System.Drawing.Size(43, 23);
+            this.startToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
             this.startToolStripMenuItem.Text = "시작";
             this.startToolStripMenuItem.Click += new System.EventHandler(this.startToolStripMenuItem_Click);
             // 
@@ -84,23 +82,16 @@
             // 
             this.stopToolStripMenuItem.Name = "stopToolStripMenuItem";
             this.stopToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.R)));
-            this.stopToolStripMenuItem.Size = new System.Drawing.Size(43, 23);
+            this.stopToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
             this.stopToolStripMenuItem.Text = "멈춤";
             this.stopToolStripMenuItem.Click += new System.EventHandler(this.stopToolStripMenuItem_Click);
             // 
             // maxIntervalToolStripMenuItem
             // 
             this.maxIntervalToolStripMenuItem.Name = "maxIntervalToolStripMenuItem";
-            this.maxIntervalToolStripMenuItem.Size = new System.Drawing.Size(99, 23);
+            this.maxIntervalToolStripMenuItem.Size = new System.Drawing.Size(99, 20);
             this.maxIntervalToolStripMenuItem.Text = "검색 최대 간격";
             this.maxIntervalToolStripMenuItem.Click += new System.EventHandler(this.maxIntervalToolStripMenuItem_Click);
-            // 
-            // howToUseToolStripMenuItem
-            // 
-            this.howToUseToolStripMenuItem.Name = "howToUseToolStripMenuItem";
-            this.howToUseToolStripMenuItem.Size = new System.Drawing.Size(55, 23);
-            this.howToUseToolStripMenuItem.Text = "사용법";
-            this.howToUseToolStripMenuItem.Click += new System.EventHandler(this.사용법ToolStripMenuItem_Click);
             // 
             // Setup_ToolStripMenuItem
             // 
@@ -111,7 +102,7 @@
             this.toolStripMenuItem1,
             this.exitToolStripMenuItem});
             this.Setup_ToolStripMenuItem.Name = "Setup_ToolStripMenuItem";
-            this.Setup_ToolStripMenuItem.Size = new System.Drawing.Size(43, 23);
+            this.Setup_ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
             this.Setup_ToolStripMenuItem.Text = "설정";
             // 
             // saveToolStripMenuItem
@@ -150,16 +141,6 @@
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
             this.exitToolStripMenuItem.Text = "종료";
             // 
-            // label1
-            // 
-            this.label1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.label1.Enabled = false;
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(150, 23);
-            this.label1.Text = "검색 시간 : 00:00:00";
-            // 
             // timer1
             // 
             this.timer1.Interval = 1000;
@@ -170,15 +151,138 @@
             this.timer2.Interval = 1000;
             this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
+            // Search_Keyword_Label
+            // 
+            this.Search_Keyword_Label.AutoSize = true;
+            this.Search_Keyword_Label.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.Search_Keyword_Label.Location = new System.Drawing.Point(13, 66);
+            this.Search_Keyword_Label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Search_Keyword_Label.Name = "Search_Keyword_Label";
+            this.Search_Keyword_Label.Size = new System.Drawing.Size(97, 20);
+            this.Search_Keyword_Label.TabIndex = 2;
+            this.Search_Keyword_Label.Text = "검색 키워드 :";
+            // 
+            // Keyword
+            // 
+            this.Keyword.Location = new System.Drawing.Point(120, 63);
+            this.Keyword.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Keyword.Name = "Keyword";
+            this.Keyword.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.Keyword.Size = new System.Drawing.Size(222, 27);
+            this.Keyword.TabIndex = 3;
+            // 
+            // Running_Time
+            // 
+            this.Running_Time.AutoSize = true;
+            this.Running_Time.Location = new System.Drawing.Point(28, 96);
+            this.Running_Time.Name = "Running_Time";
+            this.Running_Time.Size = new System.Drawing.Size(82, 20);
+            this.Running_Time.TabIndex = 4;
+            this.Running_Time.Text = "검색 시간 :";
+            this.Running_Time.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(116, 96);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(63, 20);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "00:00:00";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(28, 125);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(82, 20);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "검색 간격 :";
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Checked = true;
+            this.radioButton1.Location = new System.Drawing.Point(198, 123);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(72, 24);
+            this.radioButton1.TabIndex = 7;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "무작위";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(120, 123);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(72, 24);
+            this.radioButton2.TabIndex = 8;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "고정형";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // Status_Label
+            // 
+            this.Status_Label.AutoSize = true;
+            this.Status_Label.Location = new System.Drawing.Point(63, 36);
+            this.Status_Label.Name = "Status_Label";
+            this.Status_Label.Size = new System.Drawing.Size(47, 20);
+            this.Status_Label.TabIndex = 9;
+            this.Status_Label.Text = "상태 :";
+            // 
+            // Status
+            // 
+            this.Status.AutoSize = true;
+            this.Status.Location = new System.Drawing.Point(116, 36);
+            this.Status.Name = "Status";
+            this.Status.Size = new System.Drawing.Size(148, 20);
+            this.Status.TabIndex = 10;
+            this.Status.Text = "작업을 기다리는 중...";
+            // 
+            // MainBtn
+            // 
+            this.MainBtn.Location = new System.Drawing.Point(231, 169);
+            this.MainBtn.Name = "MainBtn";
+            this.MainBtn.Size = new System.Drawing.Size(111, 38);
+            this.MainBtn.TabIndex = 11;
+            this.MainBtn.Text = "시작";
+            this.MainBtn.UseVisualStyleBackColor = true;
+            // 
+            // HelpLabel
+            // 
+            this.HelpLabel.AutoSize = true;
+            this.HelpLabel.Location = new System.Drawing.Point(13, 178);
+            this.HelpLabel.Name = "HelpLabel";
+            this.HelpLabel.Size = new System.Drawing.Size(75, 20);
+            this.HelpLabel.TabIndex = 12;
+            this.HelpLabel.TabStop = true;
+            this.HelpLabel.Text = "도움말(&H)";
+            this.HelpLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.HelpLabel_LinkClicked);
+            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(770, 476);
+            this.ClientSize = new System.Drawing.Size(355, 223);
+            this.Controls.Add(this.HelpLabel);
+            this.Controls.Add(this.MainBtn);
+            this.Controls.Add(this.Status);
+            this.Controls.Add(this.Status_Label);
+            this.Controls.Add(this.radioButton2);
+            this.Controls.Add(this.radioButton1);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.Running_Time);
+            this.Controls.Add(this.Keyword);
+            this.Controls.Add(this.Search_Keyword_Label);
             this.Controls.Add(this.menuStrip1);
+            this.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.MaximizeBox = false;
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Do It Search";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
@@ -190,7 +294,6 @@
 
         #endregion
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripTextBox Keyword;
         private System.Windows.Forms.ToolStripMenuItem startToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem stopToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem Setup_ToolStripMenuItem;
@@ -200,10 +303,19 @@
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.ToolStripMenuItem howToUseToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem maxIntervalToolStripMenuItem;
         private System.Windows.Forms.Timer timer2;
-        private System.Windows.Forms.ToolStripTextBox label1;
+        private System.Windows.Forms.Label Search_Keyword_Label;
+        private System.Windows.Forms.TextBox Keyword;
+        private System.Windows.Forms.Label Running_Time;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.Label Status_Label;
+        private System.Windows.Forms.Label Status;
+        private System.Windows.Forms.Button MainBtn;
+        private System.Windows.Forms.LinkLabel HelpLabel;
     }
 }
 

@@ -34,9 +34,6 @@ namespace iCAROS7.DoItSearch.Decktop.CSharp
                 Max_Cnt = Settings.Instance.Max_Cnt;
                 loadAtStartToolStripMenuItem.Checked = Settings.Instance.LoadAtStart;
             }
-            // init form Size set to PrimaryScreen 1/4
-            this.Width = Screen.PrimaryScreen.Bounds.Width / 2;
-            this.Height = Screen.PrimaryScreen.Bounds.Height / 2;
         }
 
         private void Keyword_Click(object sender, EventArgs e)
@@ -47,11 +44,6 @@ namespace iCAROS7.DoItSearch.Decktop.CSharp
         private void Form1_Load(object sender, EventArgs e)
         {
             Log.InfoFormat(@"프로그램 실행");
-            
-            // Move form to Center Screen
-            int x = Screen.PrimaryScreen.Bounds.Width / 2 - this.Width / 2;
-            int y = Screen.PrimaryScreen.Bounds.Height / 2 - this.Height / 2;
-            this.Location = new Point(x, y);
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -173,16 +165,16 @@ namespace iCAROS7.DoItSearch.Decktop.CSharp
         private void timer2_Tick(object sender, EventArgs e)
         {
             TimeSpan span = new TimeSpan(DateTime.Now.Ticks - startTime.Ticks);
-            label1.Text = @"검색 시간 : " + span.ToString(@"hh\:mm\:ss");
+            label1.Text = span.ToString(@"hh\:mm\:ss");
         }
 
-        private void 사용법ToolStripMenuItem_Click(object sender, EventArgs e)
+        private void HelpLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            MessageBox.Show(@"가장 앞쪽 하얀 박스에 검색할 텍스트를 입력합니다." + "\n" + 
+            MessageBox.Show(@"가장 앞쪽 하얀 박스에 검색할 텍스트를 입력합니다." + "\n" +
                 @"','(반점, 콤마) 기호를 이력하여 검색어를 구분합니다." + "\n" +
-                @"예시 : 트위터,#트위터" + "\n" +"\n" +
-                @"검색 최대 간격 버튼을 눌러 검색 최대간격을 설정합니다. 기본적으로 10초입니다." + "\n" + 
-                @"시작을 눌러 검색을 시작합니다." + "\n" + "\n" + 
+                @"예시 : 트위터,#트위터" + "\n" + "\n" +
+                @"검색 최대 간격 버튼을 눌러 검색 최대간격을 설정합니다. 기본적으로 3초입니다." + "\n" +
+                @"시작을 눌러 검색을 시작합니다." + "\n" + "\n" +
                 @"제작 : hominlab@minnote.net", @"도움말", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
