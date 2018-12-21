@@ -15,6 +15,9 @@ A Simple Twitter Search Program based on c# (Include vb.net version. but disconn
 7. Setup interval, via click "Searching Interval" button. default value is 5sec.
 8. **click "Start"** button!
 
+## If can not launch after Update
+Just Run **Reset_Settings.cmd**!
+
 ## Who
 Powered By hominlab@minnote.net
 
