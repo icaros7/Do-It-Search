@@ -55,6 +55,9 @@ namespace iCAROS7.DoItSearch.Decktop.CSharp
             this.Text = strLang.maxIntervalToolStripMenuItem + strLang.Setup;
             button1.Text = strLang.OKBtn;
             button2.Text = strLang.CancelBtn;
+
+            // Foucs to textBox1
+            this.ActiveControl = textBox1;
         }
     }
 }

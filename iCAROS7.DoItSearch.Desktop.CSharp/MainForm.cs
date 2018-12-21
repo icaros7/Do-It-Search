@@ -31,8 +31,22 @@ namespace iCAROS7.DoItSearch.Decktop.CSharp
             // Load Settings
             if (Settings.Instance.LoadAtStart == true)
             {
-                loadSettings();
-                ChangeLang(Settings.Instance.LastLang);
+                try
+                {
+                    loadSettings();
+                    if (Settings.Instance.LastLang == null)
+                    {
+                        Settings.Instance.LastLang = "ko";
+                        Settings.Instance.Save();
+                    }
+                    ChangeLang(Settings.Instance.LastLang);
+                }
+                catch (Exception ex)
+                {
+                    Log.ErrorFormat(strLang.Log_Error_Load);
+                    Log.Error(ex);
+                    MessageBox.Show(strLang.Load_Loaded_Error, strLang.Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             else
             {
@@ -140,6 +154,10 @@ namespace iCAROS7.DoItSearch.Decktop.CSharp
             {
                 Keyword.Text = Settings.Instance.Keyword;
                 Max_Cnt = Settings.Instance.Max_Cnt;
+                if (Max_Cnt < 1)
+                {
+                    Max_Cnt = 5;
+                }
                 loadAtStartToolStripMenuItem.Checked = Settings.Instance.LoadAtStart;
                 if (Settings.Instance.SearchOption == 0)
                 {
@@ -214,6 +232,7 @@ namespace iCAROS7.DoItSearch.Decktop.CSharp
                 else
                 {
                     MessageBox.Show(strLang.Error_Type_Keyword, strLang.Error, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    Log.ErrorFormat(strLang.Log_Error_Blank_Keyword);
                 }
             }
             else if (MainBtn.Text == strLang.MainBtn_Stop)
