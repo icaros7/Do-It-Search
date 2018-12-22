@@ -255,7 +255,7 @@ namespace iCAROS7.DoItSearch.Decktop.CSharp
                 timer1.Enabled = false;
                 timer2.Enabled = false;
                 Cnt = 0;
-                Log.InfoFormat(strLang.Status_Stop);
+                Log.InfoFormat(strLang.Status_Stop + @" - " + label1.Text);
                 Status.ForeColor = System.Drawing.Color.Black;
                 Status.Text = strLang.Status_Stop;
                 MessageBox.Show(strLang.Msg_Stop, strLang.Information, MessageBoxButtons.OK, MessageBoxIcon.Information);
