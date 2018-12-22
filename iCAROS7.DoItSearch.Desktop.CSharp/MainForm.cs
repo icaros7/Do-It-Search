@@ -322,20 +322,6 @@ namespace iCAROS7.DoItSearch.Decktop.CSharp
             loadAtStartToolStripMenuItem.Text = strLang.loadAtStartToolStripMenuItem;
             loadToolStripMenuItem.Text = strLang.loadToolStripMenuItem;
             exitToolStripMenuItem.Text = strLang.exitToolStripMenuItem;
-            if (lang != "ko") // Reconfig Some control location for Korean
-            {
-                Status_Label.Location = new Point(52, 36);
-                Search_Keyword_Label.Location = new Point(35, 66);
-                Running_Time.Location = new Point(60, 96);
-                Interval_Type.Location = new Point(43, 125);
-            }
-            else
-            {
-                Status_Label.Location = new Point(65, 36);
-                Search_Keyword_Label.Location = new Point(15, 66);
-                Running_Time.Location = new Point(30, 96);
-                Interval_Type.Location = new Point(30, 125);
-            }
         }
 
         private void githubToolStripMenuItem_Click(object sender, EventArgs e)
